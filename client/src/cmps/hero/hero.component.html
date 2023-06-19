@@ -1,0 +1,9 @@
+<div class="hero-pic">
+    <div class="inside-hero">
+        <div class="hero-text" style="letter-spacing: 1.75px;">Epicure works with top</div>
+        <div class="hero-text">chef restaurants in Tel Aviv </div>
+        <input #input (blur)="cleanInput(input)" (keyup)="onKey($event)" class="hero-search" type="text"
+            placeholder="search for restaurant,cuisine, chef">
+        <app-search *ngIf="searchinput" [searchvalue]="searchinput|lowercase"></app-search>
+    </div>
+</div>

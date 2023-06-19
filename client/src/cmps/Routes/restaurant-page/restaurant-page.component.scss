@@ -1,0 +1,63 @@
+* {
+    font-family: 'Helvetica Neue';
+}
+
+.headerImg {
+    padding: 2% 0 0 5%;
+    width: 90%;
+    object-fit: cover;
+}
+
+.restDetails {
+    margin-top: 2%;
+    height: 200px;
+    text-align: center;
+}
+
+.restName {
+    font-weight: 900;
+    font-size: 56px;
+}
+
+.restChef {
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.restOpenClosed {
+    margin-top: 3%;
+    font-size: 18px;
+    background-image: url('/assets/restaurant-assets/clock.svg');
+    background-repeat: no-repeat;
+    background-position: 45%;
+}
+
+.mealFilter {
+    padding: 0 40%;
+    justify-content: space-around;
+    display: flex;
+    text-align: center;
+}
+
+p {
+    cursor: pointer;
+}
+
+p:hover {
+    border-bottom: 1.8px solid rgba(222, 146, 0, 0.9);
+}
+
+.underline {
+    border-bottom: 1.8px solid rgba(222, 146, 0, 0.9);
+}
+
+.dishes {
+    display: flex;
+    padding: 1% 0 0 4%;
+    flex-wrap: wrap;
+}
+
+.dishes div {
+    margin: 0 1%;
+    cursor: pointer;
+}

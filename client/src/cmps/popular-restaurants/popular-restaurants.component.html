@@ -1,0 +1,7 @@
+<p>POPULAR RESTAURANTS IN EPICURE</p>
+<div class="restDiv">
+    <div *ngFor="let item of itemstest$ | async">
+        <app-restaurant [restaurantItem]="item"></app-restaurant>
+    </div>
+</div>
+<a href="/restaurants">All Restaurants >></a>

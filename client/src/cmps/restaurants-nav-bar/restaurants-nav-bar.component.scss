@@ -1,0 +1,114 @@
+* {
+    font-family: 'Helvetica Neue';
+    font-size: large;
+    font-weight: bold;
+}
+
+.mainFilter {
+    letter-spacing: 2px;
+    display: flex;
+    padding: 60px 300px 40px 300px;
+    justify-content: space-around;
+}
+
+.seconderyFilters {
+    background-color: #FAFAFA;
+    padding: 30px 400px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.seconderyFilters a {
+    background-image: url('/assets/restaurants-navbar-assets/btnDown.svg');
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 50%;
+    cursor: pointer;
+}
+
+.seconderyFilters a:nth-child(1) {
+    width: 115px;
+}
+
+.seconderyFilters a:nth-child(2) {
+    width: 75px;
+}
+
+.priceRange {
+    position: absolute;
+    background-color: #FAFAFA;
+    display: flex;
+    width: 180px;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 400px;
+    padding: 0 20px 20px 20px;
+    top: 220px;
+    left: 20px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+button {
+    margin: 20px 50px 0 50px;
+    height: 35px;
+    width: 96px;
+    background: transparent;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+.rating {
+    position: absolute;
+    background-color: #FAFAFA;
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 400px;
+    padding: 10px 20px 20px 20px;
+    top: 220px;
+    left: 250px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.star {
+    background-image: url('/assets/restaurant-assets/star.svg');
+    background-repeat: no-repeat;
+    height: 37px;
+    width: 40px;
+}
+
+.unstar {
+    background-image: url('/assets/restaurant-assets/unstar.svg');
+    background-repeat: no-repeat;
+    height: 37px;
+    width: 40px;
+}
+
+input[type=checkbox] {
+    cursor: pointer
+}
+
+p:hover {
+    cursor: pointer;
+}
+
+p {
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: 900;
+}

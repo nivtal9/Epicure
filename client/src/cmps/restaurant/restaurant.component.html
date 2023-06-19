@@ -1,0 +1,9 @@
+<div [ngClass]="fromPopularRest? 'restCard': 'restCardChef'">
+    <img src={{restaurantItem.imageURI}}>
+    <span class="restName">{{restaurantItem.name}}</span>
+    <span *ngIf="fromPopularRest">{{restaurantItem.chef.name}}</span>
+    <span class="stars" *ngIf="fromPopularRest">
+        <span *ngFor="let item of starsArr" [ngClass]="item? 'star': 'unstar'">
+        </span>
+    </span>
+</div>

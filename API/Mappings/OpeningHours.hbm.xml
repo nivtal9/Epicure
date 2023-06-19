@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="API" namespace="API.Models">
+	<class name="OpeningHour" table="openingHours">
+		<id name="Id" column="Id" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="Day" type="int" />
+		<property name="Opening" type="date"/>
+		<property name="Closing" type="date"/>
+		<many-to-one
+            name="Restaurant"
+            column="RestaurantId"
+            class="Restaurant"/>
+	</class>
+</hibernate-mapping>

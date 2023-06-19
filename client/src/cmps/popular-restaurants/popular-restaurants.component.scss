@@ -1,0 +1,27 @@
+* {
+    font-family: 'Helvetica Neue';
+}
+
+.restDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0 5%;
+}
+
+p {
+    margin: 3% 0;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 1.75px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: 900;
+    float: right;
+    margin: 3% 8.5%;
+}

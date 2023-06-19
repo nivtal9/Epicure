@@ -1,0 +1,74 @@
+* {
+    font-family: 'Helvetica Neue';
+    background-color: #F9F4EA;
+}
+
+.dishCard {
+    height: 550px;
+    max-width: 342px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2%;
+    justify-content: space-between;
+    pointer-events: none;
+
+    img {
+        width: 342px;
+        max-height: 219px;
+    }
+}
+
+.dishName {
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.dishIngredients {
+    padding: 0 10%;
+    font-size: 24px;
+}
+
+h2 {
+    width: 80%;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    line-height: 0.1em;
+    margin: 5% 7%;
+}
+
+.dishPrice {
+    padding: 0 10px;
+}
+
+.dishIcon {
+    height: 30px;
+    width: auto;
+    padding-bottom: 10px;
+}
+
+.firstEle div {
+    margin: 8px 0;
+}
+
+.secondEle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.dishOfRest {
+    height: 550px;
+    max-width: 266px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2%;
+    justify-content: space-between;
+
+    .dishImg {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+}

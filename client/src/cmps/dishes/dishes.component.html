@@ -1,0 +1,14 @@
+<div (click)="OpenDialog(dishItem)" [ngClass]="fromSingleRestPage? 'dishOfRest' :'dishCard'">
+    <div class="firstEle">
+        <img class="dishImg" src={{dishItem.imageURI}}>
+        <div class="dishName">{{dishItem.name}}</div>
+        <div class="dishIngredients">{{dishItem.ingredients}}</div>
+    </div>
+    <div class="secondEle">
+        <div *ngFor="let icon of dishItem.dishIcons">
+            <img class="dishIcon" src="{{icon.iconURI}}">
+        </div>
+        <h2 *ngIf="dishItem.price!"><span class="dishPrice">{{dishItem.price | currency:
+                ' ₪' : 'symbol': '1.0-0'}}</span></h2>
+    </div>
+</div>

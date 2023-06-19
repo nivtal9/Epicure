@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="API" namespace="API.Models">
+	<class name="DishIcons" table="dishIcons">
+		<id name="Id" generator="native"/>
+		<property name="IconURI"/>
+		<set name="Dishes" table="DishIcons_Dishes">
+			<key column="DishIconId"/>
+				<many-to-many class="Dish" column="DishId"/>
+		</set>
+	</class>
+</hibernate-mapping>

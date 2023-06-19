@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="API" namespace="API.Models">
+	<class name="Dish" table="dishes">
+		<id name="Id" column="Id" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="Name" type="string" />
+		<property name="Ingredients" type="string" />
+		<property name="ImageURI" type="string" />
+		<property name="Price" type="int" />
+		<many-to-one
+            name="Restaurant"
+            column="RestaurantId"
+            class="Restaurant"/>
+		
+		<set name="DishChanges" table="DishChanges_Dishes" cascade="save-update">
+			<key column="DishId"/>
+			<many-to-many class="DishChanges" column="DishChangeId"/>
+		</set>
+		<set name="DishIcons" table="DishIcons_Dishes" cascade="save-update">
+			<key column="DishId"/>
+			<many-to-many class="DishIcons" column="DishIconId"/>
+		</set>
+		<set name="DishMealTypes" table="DishMealTypes_Dishes" cascade="save-update">
+			<key column="DishId"/>
+			<many-to-many class="DishMealTypes" column="DishMealTypeId"/>
+		</set>
+		<set name="DishSides" table="DishSides_Dishes" cascade="save-update">
+			<key column="DishId"/>
+			<many-to-many class="DishSides" column="DishSideId"/>
+		</set>
+	</class>
+</hibernate-mapping>

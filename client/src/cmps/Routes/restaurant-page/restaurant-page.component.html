@@ -1,0 +1,16 @@
+<img class="headerImg" src="{{currRest.imageURI}}" alt="">
+<div class="restDetails">
+    <div class="restName">{{currRest.name}}</div>
+    <div class="restChef">{{currRest.chef.name}}</div>
+    <div class="restOpenClosed">{{openClosed}}</div>
+</div>
+<div class="mealFilter">
+    <p [ngClass]="{'underline':isUnderline(0)}" (click)="setHeader(0)">Breakfast</p>
+    <p [ngClass]="{'underline':isUnderline(1)}" (click)="setHeader(1)">Lunch</p>
+    <p [ngClass]="{'underline':isUnderline(2)}" (click)="setHeader(2)">Dinner</p>
+</div>
+<div class="dishes">
+    <div *ngFor="let item of restaurantDishes$ | async">
+        <app-dishes [dishItem]="item" [fromSingleRestPage]="true"></app-dishes>
+    </div>
+</div>

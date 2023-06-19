@@ -1,0 +1,170 @@
+
+    drop table dishChanges cascade constraints
+
+    drop table DishChanges_Dishes cascade constraints
+
+    drop table dishIcons cascade constraints
+
+    drop table DishIcons_Dishes cascade constraints
+
+    drop table dishMealTypes cascade constraints
+
+    drop table DishMealTypes_Dishes cascade constraints
+
+    drop table dishSides cascade constraints
+
+    drop table DishSides_Dishes cascade constraints
+
+    drop table openingHours cascade constraints
+
+    drop table chefs cascade constraints
+
+    drop table dishes cascade constraints
+
+    drop table restaurants cascade constraints
+
+    drop sequence hibernate_sequence
+
+    create table dishChanges (
+        Id NUMBER(10,0) not null,
+       Enum NUMBER(10,0),
+       primary key (Id)
+    )
+
+    create table DishChanges_Dishes (
+        DishChangeId NUMBER(10,0) not null,
+       DishId NUMBER(10,0) not null,
+       primary key (DishId, DishChangeId)
+    )
+
+    create table dishIcons (
+        Id NUMBER(10,0) not null,
+       IconURI VARCHAR2(255),
+       primary key (Id)
+    )
+
+    create table DishIcons_Dishes (
+        DishIconId NUMBER(10,0) not null,
+       DishId NUMBER(10,0) not null,
+       primary key (DishId, DishIconId)
+    )
+
+    create table dishMealTypes (
+        Id NUMBER(10,0) not null,
+       Enum NUMBER(10,0),
+       primary key (Id)
+    )
+
+    create table DishMealTypes_Dishes (
+        DishMealTypeId NUMBER(10,0) not null,
+       DishId NUMBER(10,0) not null,
+       primary key (DishId, DishMealTypeId)
+    )
+
+    create table dishSides (
+        Id NUMBER(10,0) not null,
+       Enum NUMBER(10,0),
+       primary key (Id)
+    )
+
+    create table DishSides_Dishes (
+        DishSideId NUMBER(10,0) not null,
+       DishId NUMBER(10,0) not null,
+       primary key (DishId, DishSideId)
+    )
+
+    create table openingHours (
+        Id NUMBER(10,0) not null,
+       Day NUMBER(10,0),
+       Opening DATE,
+       Closing DATE,
+       RestaurantId NUMBER(10,0),
+       primary key (Id)
+    )
+
+    create table chefs (
+        Id NUMBER(10,0) not null,
+       Name VARCHAR2(255),
+       Description VARCHAR2(500),
+       Views NUMBER(10,0),
+       ImageURI VARCHAR2(255),
+       primary key (Id)
+    )
+
+    create table dishes (
+        Id NUMBER(10,0) not null,
+       Name VARCHAR2(255),
+       Ingredients VARCHAR2(255),
+       ImageURI VARCHAR2(255),
+       Price NUMBER(10,0),
+       RestaurantId NUMBER(10,0),
+       primary key (Id)
+    )
+
+    create table restaurants (
+        Id NUMBER(10,0) not null,
+       Name VARCHAR2(255),
+       ImageURI VARCHAR2(255),
+       Rating NUMBER(10,0),
+       Popularity NUMBER(10,0),
+       DateOpened DATE,
+       ChefId NUMBER(10,0),
+       primary key (Id)
+    )
+
+    alter table DishChanges_Dishes 
+        add constraint FK_159F6C46 
+        foreign key (DishId) 
+        references dishes
+
+    alter table DishChanges_Dishes 
+        add constraint FK_8FC3B2A3 
+        foreign key (DishChangeId) 
+        references dishChanges
+
+    alter table DishIcons_Dishes 
+        add constraint FK_E0D39784 
+        foreign key (DishId) 
+        references dishes
+
+    alter table DishIcons_Dishes 
+        add constraint FK_4AE7063B 
+        foreign key (DishIconId) 
+        references dishIcons
+
+    alter table DishMealTypes_Dishes 
+        add constraint FK_E133C266 
+        foreign key (DishId) 
+        references dishes
+
+    alter table DishMealTypes_Dishes 
+        add constraint FK_4A429334 
+        foreign key (DishMealTypeId) 
+        references dishMealTypes
+
+    alter table DishSides_Dishes 
+        add constraint FK_858EC6BB 
+        foreign key (DishId) 
+        references dishes
+
+    alter table DishSides_Dishes 
+        add constraint FK_F7AA23A9 
+        foreign key (DishSideId) 
+        references dishSides
+
+    alter table openingHours 
+        add constraint FK_1754CE3D 
+        foreign key (RestaurantId) 
+        references restaurants
+
+    alter table dishes 
+        add constraint FK_28281118 
+        foreign key (RestaurantId) 
+        references restaurants
+
+    alter table restaurants 
+        add constraint FK_3707366C 
+        foreign key (ChefId) 
+        references chefs
+
+    create sequence hibernate_sequence

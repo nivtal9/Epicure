@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="API" namespace="API.Models">
+	<class name="Restaurant" table="restaurants">
+		<id name="Id" column="Id" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="Name" type="string" />
+		<property name="ImageURI" type="string" />
+		<property name="Rating" type="int" />
+		<property name="Popularity" type="int" />
+		<property name="DateOpened" type="date" />
+		<set name="Dishes">
+			<key column="RestaurantId"></key>
+			<one-to-many class="Dish"></one-to-many>
+		</set>
+		<set name="OpeningHours" cascade="save-update">
+			<key column="RestaurantId"></key>
+			<one-to-many class="OpeningHour"></one-to-many>
+		</set>
+		<many-to-one
+            name="Chef"
+            column="ChefId"
+            class="Chef"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<button class="close" (click)="CloseDialog()"></button>
+<form [formGroup]="form" class="dishItem">
+    <img class="dishImg" src="{{dish.imageURI}}">
+    <div class="dishName">{{dish.name}}</div>
+    <div class="dishIngredients">{{dish.ingredients}}</div>
+    <div *ngFor="let icon id dish.dishIcons">
+        <img class="dishIcon" src="{{icon}}">
+    </div>
+    <span class="dishPrice">{{dish.price! | currency:
+        ' ₪' : 'symbol': '1.0-0'}}</span>
+    <div class="sections"><span>Choose a side</span></div>
+    <mat-radio-group formControlName="radio">
+        <mat-radio-button *ngFor="let item of dish.dishSides" value="{{item.enum}}">{{item.enum |
+            sides}}</mat-radio-button>
+    </mat-radio-group>
+    <div class="sections"><span>Changes</span></div>
+    <div class="align" *ngFor="let item of dish.dishChanges;let i=index" formArrayName="checkboxes">
+        <mat-checkbox formControlName="{{i}}">{{item.enum | changes}}</mat-checkbox>
+    </div>
+    <div class="sections"><span>Quantity</span></div>
+    <div class="quantity">
+        <button class="minus" (click)="quantityChange(false)"></button>
+        <input type="number" formControlName="quantity">
+        <button class="plus" (click)="quantityChange(true)"></button>
+    </div>
+    <button [disabled]="addToBag" class="bag" (click)="submitDish()">ADD TO BAG</button>
+</form>

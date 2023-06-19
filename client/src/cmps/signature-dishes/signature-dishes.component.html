@@ -1,0 +1,6 @@
+<p>SIGNATURE DISH OF</p>
+<div class="dishDiv">
+    <div *ngFor="let item of itemstest$ | async">
+        <app-dishes [dishItem]="item"></app-dishes>
+    </div>
+</div>

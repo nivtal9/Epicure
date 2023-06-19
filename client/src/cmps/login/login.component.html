@@ -1,0 +1,23 @@
+<button class="close" (click)="CloseDialog()"></button>
+<div class="loginCmp">
+    <span class="signHeader">SIGN IN</span>
+    <span>To continue the order, Please sign in</span>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="user-input-wrp">
+            <mat-form-field>
+                <input matInput formControlName="email" type="text" class="inputText" />
+                <span class="floating-label">Email address</span>
+            </mat-form-field>
+        </div>
+        <div class="user-input-wrp">
+            <mat-form-field>
+                <input matInput formControlName="password" type="password" class="inputText" />
+                <span class="floating-label">Password</span>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button type="submit" [disabled]="form.invalid">LOGIN</button>
+    </form>
+    <a href="">Forget password?</a>
+    <span class="or">or</span>
+    <button class="signup">SIGN UP</button>
+</div>

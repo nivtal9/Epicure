@@ -1,0 +1,21 @@
+<div class="weeklychef" *ngIf="chefItem$ | async as chef">
+    <p>CHEF OF THE WEEK </p>
+    <div class="chefInfo">
+        <div class="chefSquare">
+            <img src="{{chef.imageURI}}">
+            <span class="chefName">
+                {{chef.name}}
+            </span>
+        </div>
+        <div class="chefDescription">
+            {{chef.description}}
+        </div>
+    </div>
+    <div class="restHeader">
+        {{chef.name.split(' ')[0]}}'s Restaurants
+    </div>
+    <div class="chefRestaurants">
+        <app-restaurant [fromPopularRest]="false" *ngFor="let chefsRestaurant of chefsRestaurants$ | async"
+            [restaurantItem]="chefsRestaurant"></app-restaurant>
+    </div>
+</div>

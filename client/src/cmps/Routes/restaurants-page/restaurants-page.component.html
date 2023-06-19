@@ -1,0 +1,7 @@
+<app-restaurant-nav-bar></app-restaurant-nav-bar>
+<div class="allRest">
+    <div *ngFor="let item of itemstest$ | async">
+        <app-restaurant [restaurantItem]="item" routerLink="/restaurants/{{item.name}}"
+            [state]="{restaurant:item}"></app-restaurant>
+    </div>
+</div>

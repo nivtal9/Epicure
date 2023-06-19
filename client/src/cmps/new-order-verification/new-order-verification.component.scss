@@ -1,0 +1,48 @@
+.new-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+img {
+    padding: 7% 0;
+}
+
+h4 {
+    padding: 2% 0;
+}
+
+p {
+    padding: 2% 11%;
+}
+
+button {
+    margin: 2% 0;
+    width: 130px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.delete {
+    color: white;
+    background-color: black;
+}
+
+.delete:hover {
+    color: black;
+    background-color: white;
+}
+
+.back-to-order {
+    color: black;
+    background-color: white;
+}
+
+.back-to-order:hover {
+    color: white;
+    background-color: black;
+}

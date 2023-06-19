@@ -1,0 +1,46 @@
+<div *ngIf="(order$ | async) as order" class="shoppingBag">
+    <div *ngIf="!order.restName else res;">
+        <img class="emptyBag" src="/assets/nav-bar-assets/shoppingBag.svg" alt="">
+        <span>
+            <br>YOUR BAG IS <br> EMPTY
+        </span>
+    </div>
+    <ng-template #res>
+        <span class="header">YOUR ORDER</span>
+        <span class="restOrder">{{order.restName}}</span>
+        <div class="Orders">
+            <div *ngFor="let dish of order.dishes">
+                <div class="dish">
+                    <img class="dish-img" src="{{dish.imageURI}}">
+                    <span class="dish-quantity">{{dish.quantity}}</span>
+                    <div class="dish-prop">
+                        <span class="dish-name">{{dish.name}}</span>
+                        <span class="dish-price">{{dish.price | currency:
+                            ' ₪' : 'symbol': '1.0-0'}}</span>
+                        <div class="dish-extras">
+                            <span class="dish-sides">{{dish.dishSides![0] | sides}}</span>
+                            <span class="comma">|</span>
+                            <span class="dish-changes">
+                                <span *ngFor="let change of dish.dishChanges">{{change | changes}}. </span>
+                            </span>
+                        </div>
+                        <div class="dish-sum">{{(dish.price * dish.quantity!)| currency:
+                            ' ₪' : 'symbol': '1.0-0'}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <span class="Comment">Add A Comment</span>
+        <div [formGroup]="form">
+            <textarea class="text-area" formControlName="textArea"
+                placeholder="Special requests, allergies, detary restrictions, etc."></textarea>
+        </div>
+        <button class="checkout">
+            <span>CHECKOUT</span>
+            <span>{{order.totalSum | currency:
+                ' ₪' : 'symbol': '1.0-0'}}</span>
+        </button>
+    </ng-template>
+    <button class="history">ORDER HISTORY</button>
+</div>

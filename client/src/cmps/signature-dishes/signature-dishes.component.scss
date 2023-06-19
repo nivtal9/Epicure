@@ -1,0 +1,18 @@
+* {
+    font-family: 'Helvetica Neue';
+}
+
+.dishDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0 5%;
+}
+
+p {
+    margin: 8% 0 2% 0;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 1.75px;
+}

@@ -1,0 +1,19 @@
+<div class="main-nav-bar">
+    <span class="main-nav-bar-left">
+        <a routerLink="/home-page" class="epicure-logo"><img src="/assets/nav-bar-assets/logo.svg" alt=""></a>
+        <a class="epicure-left-title" routerLink="/home-page">EPICURE</a>
+        <a class="epicure-left" routerLink="/restaurants" routerLinkActive="active">Restaurants</a>
+        <a class="epicure-left" href="#" routerLinkActive="active">Chefs</a>
+    </span>
+    <span class="main-nav-bar-right">
+        <button class="search-box">
+            <input #input (blur)="cleanInput(input)" (keyup)="onKey($event)" type="text"
+                placeholder="search for restaurant,cuisine, chef">
+        </button>
+        <button (click)="openDialog()" class="epicure-right"><img src="/assets/nav-bar-assets/userIco.svg"></button>
+        <button (click)="ShoppingBag()" class="epicure-right"><img
+                src="/assets/nav-bar-assets/shoppingBag.svg"></button>
+    </span>
+</div>
+<app-shopping-bag *ngIf="shoppingBagClicked"></app-shopping-bag>
+<app-search *ngIf="searchInput" [fromHero]="false" [searchvalue]="searchInput|lowercase"></app-search>

@@ -1,0 +1,17 @@
+<div [ngClass]="fromHero? 'searchcmp':'searchnavbar'">
+    <div *ngIf="!restResult?.length && !chefResult?.length && !dishResult?.length; else res">
+        <p>No Results Found</p>
+    </div>
+    <ng-template #res>
+        <div class="result" *ngIf="restResult?.length">Restaurants:
+            <div *ngFor="let rest of restResult">{{rest.name}}</div>
+        </div>
+        <div class="result" *ngIf="chefResult?.length">Chefs:
+            <div *ngFor="let chef of chefResult">{{chef.name}}</div>
+        </div>
+        <div class="result" *ngIf="dishResult?.length">Cuisine:
+            <div *ngFor="let dish of dishResult">{{dish.name}}</div>
+        </div>
+
+    </ng-template>
+</div>

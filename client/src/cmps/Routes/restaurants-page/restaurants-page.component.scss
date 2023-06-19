@@ -1,0 +1,11 @@
+.allRest {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.allRest div {
+    margin: 15px;
+    cursor: pointer;
+}

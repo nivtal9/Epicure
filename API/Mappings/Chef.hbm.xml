@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="API" namespace="API.Models">
+	<class name="Chef" table="chefs">
+		<id name="Id" column="Id" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="Name" type="string" />
+		<property name="Description" type="string" length="500" />
+		<property name="Views" type="int" />
+		<property name="ImageURI" type="string" />
+		<set name="Restaurants">
+			<key column="ChefId"></key>
+			<one-to-many class="Restaurant"></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

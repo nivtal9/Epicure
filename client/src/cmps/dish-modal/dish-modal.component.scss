@@ -1,0 +1,143 @@
+* {
+    font-family: 'Helvetica Neue';
+}
+
+.dishImg {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.dishItem {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.dishName {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 1% 0;
+}
+
+.dishIngredients {
+    margin: 1% 0;
+    font-weight: 300;
+    padding: 0 10%;
+}
+
+.dishIcon {
+    margin: 1% 0;
+    height: 20px;
+    width: auto;
+}
+
+.dishPrice {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    padding: 0 10px 5px 10px;
+}
+
+.dishPrice::after {
+    content: "";
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 90px;
+    position: absolute;
+    top: 10px;
+    right: -90px;
+}
+
+.dishPrice::before {
+    content: "";
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 90px;
+    position: absolute;
+    top: 10px;
+    right: 65px;
+}
+
+.sections span {
+    border-bottom: 1.8px solid rgba(222, 146, 0, 0.9);
+}
+
+.bag {
+    width: 150px;
+    height: 35px;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.bag:hover {
+    background-color: white;
+    color: black;
+}
+
+.bag:disabled {
+    background-color: grey;
+    pointer-events: none;
+}
+
+.quantity button {
+    width: 20px;
+    height: 10px;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 50%;
+    cursor: pointer;
+}
+
+.quantity {
+    margin: 1.5% 0;
+
+    input {
+        pointer-events: none;
+        border: none;
+        width: 30px;
+        padding: 0 0 0 15px;
+    }
+}
+
+.minus {
+    background: transparent;
+    background-image: url('/assets/modal-assets/minus.svg');
+}
+
+.plus {
+    background: transparent;
+    background-image: url('/assets/modal-assets/plus.svg');
+    opacity: 0.35;
+}
+
+.close {
+    position: fixed;
+    left: 450px;
+    top: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-image: url('/assets/modal-assets/close.svg');
+    background-position: 100%;
+    background-repeat: no-repeat;
+}
+
+::ng-deep mat-radio-group {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.align {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}

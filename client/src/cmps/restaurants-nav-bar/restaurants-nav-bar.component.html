@@ -1,0 +1,52 @@
+<div class="mainFilter">
+    <p [ngClass]="{'bold':isBold('All')}" (click)="setHeader('All')">All</p>
+    <p [ngClass]="{'bold':isBold('New')}" (click)="setHeader('New')">New</p>
+    <p [ngClass]="{'bold':isBold('Most Popular')}" (click)="setHeader('Most Popular')">Most Popular</p>
+    <p [ngClass]="{'bold':isBold('Open Now')}" (click)="setHeader('Open Now')">Open Now</p>
+    <p>Map View</p>
+</div>
+<div class="seconderyFilters">
+    <a (click)="priceRange = !priceRange">Price Range</a>
+    <a (click)="rating = !rating">Rating</a>
+</div>
+<div *ngIf="priceRange" class="priceRange">
+    <form [formGroup]="slider">
+        <p>Price Range Selected</p>
+        <ngx-slider formControlName="ngxSlider" (userChangeEnd)="onRangeChange($event)"
+            [options]="options"></ngx-slider>
+        <button *ngIf="priceRangeBtn" (click)="clearRange()">CLEAR</button>
+    </form>
+
+</div>
+
+<div *ngIf="rating" class="rating">
+    <span>Rating</span>
+    <form [formGroup]="form">
+        <div class="stars">
+            <input type="checkbox" id="0" (change)="onStarChange($event)" formControlName='input0'>
+            <span class="star"></span><span class="unstar"></span><span class="unstar"></span><span
+                class="unstar"></span><span class="unstar"></span>
+        </div>
+        <div class="stars">
+            <input type="checkbox" id="1" (change)="onStarChange($event)" formControlName='input1'>
+            <span class="star"></span><span class="star"></span><span class="unstar"></span><span
+                class="unstar"></span><span class="unstar"></span>
+        </div>
+        <div class="stars">
+            <input type="checkbox" id="2" (change)="onStarChange($event)" formControlName='input2'>
+            <span class="star"></span><span class="star"></span><span class="star"></span><span
+                class="unstar"></span><span class="unstar"></span>
+        </div>
+        <div class="stars">
+            <input type="checkbox" id="3" (change)="onStarChange($event)" formControlName='input3'>
+            <span class="star"></span><span class="star"></span><span class="star"></span><span
+                class="star"></span><span class="unstar"></span>
+        </div>
+        <div class="stars">
+            <input type="checkbox" id="4" (change)="onStarChange($event)" formControlName='input4'>
+            <span class="star"></span><span class="star"></span><span class="star"></span><span
+                class="star"></span><span class="star"></span>
+        </div>
+    </form>
+    <button *ngIf="ratingBtn" (click)="clearStars()">CLEAR</button>
+</div>

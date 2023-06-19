@@ -1,0 +1,97 @@
+-- Create the employee's table
+CREATE TABLE EMPLOYEES (
+    ID NUMBER(10) GENERATED ALWAYS AS IDENTITY (INCREMENT BY 1),
+    NAME VARCHAR2(50) NOT NULL,
+    DEPARTMENT_ID NUMBER(10) NOT NULL,
+    PRIMARY KEY (ID)
+);
+
+-- Create the department's table
+CREATE TABLE DEPARTMENTS (
+    ID NUMBER(10) GENERATED ALWAYS AS IDENTITY (INCREMENT BY 1),
+    NAME VARCHAR2(50) NOT NULL,
+    PRIMARY KEY (ID)
+);
+
+-- Create the sales table
+CREATE TABLE SALES (
+    ID NUMBER(10) GENERATED ALWAYS AS IDENTITY (INCREMENT BY 1),
+    EMPLOYEE_ID NUMBER(10) NOT NULL,
+    AMOUNT NUMBER(8, 2) NOT NULL,
+    DATE_SOLD DATE NOT NULL,
+    PRIMARY KEY (ID)
+);
+
+-- Insert data into the employee's table
+INSERT INTO EMPLOYEES (
+    NAME,
+    DEPARTMENT_ID
+) VALUES (
+    'John Smith',
+    1
+);
+
+INSERT INTO EMPLOYEES (
+    NAME,
+    DEPARTMENT_ID
+) VALUES (
+    'Jane Doe',
+    2
+);
+
+INSERT INTO EMPLOYEES (
+    NAME,
+    DEPARTMENT_ID
+) VALUES (
+    'Bob Johnson',
+    1
+);
+
+-- Insert data into the department's table
+INSERT INTO DEPARTMENTS (
+    NAME
+) VALUES (
+    'Sales'
+);
+
+INSERT INTO DEPARTMENTS (
+    NAME
+) VALUES (
+    'Marketing'
+);
+
+-- Insert data into the sales table
+INSERT INTO SALES (
+    EMPLOYEE_ID,
+    AMOUNT,
+    DATE_SOLD
+) VALUES (
+    1,
+    1000,
+    TO_DATE('01-JAN-2022', 'DD-MON-YYYY')
+);
+
+INSERT INTO SALES (
+    EMPLOYEE_ID,
+    AMOUNT,
+    DATE_SOLD
+) VALUES (
+    2,
+    500,
+    TO_DATE('01-JAN-2022', 'DD-MON-YYYY')
+);
+
+INSERT INTO SALES (
+    EMPLOYEE_ID,
+    AMOUNT,
+    DATE_SOLD
+) VALUES (
+    3,
+    700,
+    TO_DATE('01-JAN-2022', 'DD-MON-YYYY')
+);
+
+SELECT
+    *
+FROM
+    EMPLOYEES

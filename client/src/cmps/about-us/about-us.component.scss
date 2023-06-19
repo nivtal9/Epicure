@@ -1,0 +1,37 @@
+* {
+    font-family: 'Helvetica Neue';
+}
+
+p {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 1.75px;
+    padding: 5% 0 0 11%;
+}
+
+.aboutus {
+    background-color: #FAFAFA;
+    height: 470px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+}
+
+.firstBox {
+    width: 50%;
+}
+
+.aboutUsText {
+    padding: 0 1% 0 11%;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.secondBox {
+    padding: 10% 0 0 25%;
+}
+
+img {
+    padding-right: 20px;
+}

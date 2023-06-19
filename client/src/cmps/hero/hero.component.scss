@@ -1,0 +1,43 @@
+.hero-text {
+    font-family: 'Helvetica Neue';
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.hero-pic {
+    background-size: cover;
+    justify-content: center;
+    height: 100vh;
+    width: auto;
+    display: flex;
+    background-image: url('/assets/hero-assets/hero-picture.svg');
+}
+
+.hero-text {
+    text-align: center;
+}
+
+.inside-hero {
+    position: relative;
+    background: rgba(255, 255, 255, 0.88);
+    height: 25%;
+    width: 40%;
+    top: 25%;
+    padding: 36px 126px;
+}
+
+.hero-search {
+    font-family: 'Helvetica Neue';
+    font-size: x-large;
+    font-weight: bold;
+    background: transparent;
+    margin: 3% 0 0 7%;
+    padding: 2% 3% 2% 11%;
+    width: 70%;
+    border: 0.5px solid black;
+    border-radius: 4px;
+    background-image: url('/assets/nav-bar-assets/searchIco.svg');
+    background-position: 2% 50%;
+    background-size: 7%;
+    background-repeat: no-repeat;
+}
